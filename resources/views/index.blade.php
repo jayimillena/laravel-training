@@ -1,0 +1,1 @@
+Hello {{ $name }} I'm a blade template
