@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
 class Task
 {
     public function __construct(
@@ -66,10 +65,6 @@ Route::get('/{id}', function ($id) {
     return 'One single task';
 })->name('tasks.show');
 
-// Route::get('/xxx', function () {
-//     return 'Hello';
-// })->name('hello');
-
 // Route::get('/hallo', function () {
 //     return redirect()->route('hello');
 // });
@@ -80,6 +75,4 @@ Route::get('/{id}', function ($id) {
 
 Route::fallback(function () {
     return 'Still got somewhere!';
-});
-
 });
