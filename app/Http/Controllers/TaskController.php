@@ -12,8 +12,6 @@ class TaskController extends Controller
      */
     public function index()
     {
-        
-        
         return view('index', [
             'tasks' => Task::all()
         ]);
@@ -40,7 +38,9 @@ class TaskController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('show', [
+            'task' => Task::find($id)
+        ]);
     }
 
     /**

@@ -7,6 +7,6 @@
   <title>@yield('title')</title>
 </head>
 <body>
-  @yield('section')
+  @yield('content')
 </body>
 </html>
