@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\TaskRequest;
 use App\Models\Task;
 
 class TaskController extends Controller
@@ -22,15 +22,18 @@ class TaskController extends Controller
      */
     public function create()
     {
-        //
+        return view('tasks.form');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(TaskRequest $request)
     {
-        //
+        $validated_task = $request->validated();
+
+        $task = Task::create(array_merge($validated_task, ['completed' => false]));
+        return redirect()->route('tasks.index')->with('success','Task has been succesfuly added');
     }
 
     /**
@@ -54,7 +57,7 @@ class TaskController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(TaskRequest $request, string $id)
     {
         //
     }

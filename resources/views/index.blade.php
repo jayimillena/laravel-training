@@ -2,9 +2,8 @@
 
 @section('title', 'Tasks list')
 @section('content')
-<h1>
-  The list of tasks
-</h1>
+<h1>The list of tasks</h1>
+<a href="{{ route('task.create') }}">Add task</a>
 
 <div>
   {{-- @if (count($tasks)) --}}
